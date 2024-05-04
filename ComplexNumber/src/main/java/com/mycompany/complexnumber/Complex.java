@@ -21,29 +21,45 @@ public class Complex {
 
     public Complex() {
     }
+
+    public double getRe() {
+        return re;
+    }
+
+    public void setRe(double re) {
+        this.re = re;
+    }
+
+    public void setIm(double im) {
+        this.im = im;
+    }
+    
+    public double getIm() {
+        return im;
+    }
     
     public Complex plus(Complex num){
         Complex a = new Complex();
-        a.re = this.re+num.re;
-        a.im = this.im+num.im;
+        a.setRe(this.re+num.getRe());  
+        a.setIm(this.im+num.getIm());
         return a;
     }
     public Complex minus(Complex num){
         Complex a = new Complex();
-        a.re = this.re-num.re;
-        a.im = this.im-num.im;
+        a.setRe(this.re-num.getRe());
+        a.setIm(this.im-num.getIm());
         return a;
     }
     public Complex multiply(Complex num){
         Complex a = new Complex();
-        a.re = this.re*num.re - this.im*num.im;
-        a.im = this.re*num.im + this.im*num.re;
+        a.setRe(this.re*num.getRe() - this.im*num.getIm());
+        a.setIm(this.re*num.getIm() + this.im*num.getRe());
         return a;
     }
     public Complex division(Complex num){
         Complex a = new Complex();
-        a.re = (this.re*num.re + this.im*num.im)/(num.re*num.re+num.im*num.im);
-        a.im = (this.im*num.re-this.re*num.im)/(num.re*num.re+num.im*num.im);
+        a.setRe((this.re*num.getRe() + this.im*num.getIm())/(num.getRe()*num.getRe()+num.getIm()*num.getIm()));
+        a.setIm((this.im*num.getRe()-this.re*num.getIm())/(num.getRe()*num.getRe()+num.getIm()*num.getIm()));
         return a;
     }
     public void InputComplex(){
