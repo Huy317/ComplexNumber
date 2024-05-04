@@ -18,5 +18,6 @@ public class ComplexNumber {
         a.plus(b).print();
         a.minus(b).print();
         a.multiply(b).print();
+        a.division(b).print();
     }
 }

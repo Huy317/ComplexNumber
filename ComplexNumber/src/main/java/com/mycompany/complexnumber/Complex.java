@@ -24,28 +24,33 @@ public class Complex {
     
     public Complex plus(Complex num){
         Complex a = new Complex();
-        a.re = re+num.re;
-        a.im = im+num.im;
+        a.re = this.re+num.re;
+        a.im = this.im+num.im;
         return a;
     }
     public Complex minus(Complex num){
         Complex a = new Complex();
-        a.re = re-num.re;
-        a.im = im-num.im;
+        a.re = this.re-num.re;
+        a.im = this.im-num.im;
         return a;
     }
     public Complex multiply(Complex num){
         Complex a = new Complex();
-        a.re = re*num.re - im*num.im;
-        a.im = re*num.im + im*num.re;
+        a.re = this.re*num.re - this.im*num.im;
+        a.im = this.re*num.im + this.im*num.re;
         return a;
     }
-
+    public Complex division(Complex num){
+        Complex a = new Complex();
+        a.re = (this.re*num.re + this.im*num.im)/(num.re*num.re+num.im*num.im);
+        a.im = (this.im*num.re-this.re*num.im)/(num.re*num.re+num.im*num.im);
+        return a;
+    }
     public void InputComplex(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Real: ");
+        System.out.print("Real: ");
         re = sc.nextDouble();
-        System.out.println("imaginary: ");
+        System.out.print("imaginary: ");
         im = sc.nextDouble();
     }
     public void print(){
