@@ -59,7 +59,7 @@ public class Complex {
     public Complex division(Complex num){
         Complex a = new Complex();
         a.setRe((this.re*num.getRe() + this.im*num.getIm())/(num.getRe()*num.getRe()+num.getIm()*num.getIm()));
-        a.setIm((this.im*num.getRe()-this.re*num.getIm())/(num.getRe()*num.getRe()+num.getIm()*num.getIm()));
+        a.setIm((this.im*num.getRe() - this.re*num.getIm())/(num.getRe()*num.getRe()+num.getIm()*num.getIm()));
         return a;
     }
     public void InputComplex(){
